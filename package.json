@@ -1,0 +1,22 @@
+{
+  "name": "periscope-example-google-cloud-functions",
+  "description": "periscope URL builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gcloud functions deploy persicopeExample --stage-bucket periscope-example-src --trigger-http --source=. --region=us-central1 --runtime nodejs6",
+    "start-emulator": "functions start",
+    "deploy-to-emulator": "functions deploy periscopeExample --trigger-http --local-path=.",
+    "stop-emulator": "functions stop"
+  },
+  "private": true,
+  "dependencies": {
+    "@google-cloud/debug-agent": "^2.6.0",
+    "@google-cloud/trace-agent": "^2.11.0",
+    "modofun": "^1.2.0",
+    "modofun-trace-agent-plugin": "^1.0.0",
+    "morgan": "^1.8.2",
+    "js-sha256": "^0.9.0",
+    "cors": "^2.8.5"
+  }
+}
